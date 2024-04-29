@@ -3,33 +3,33 @@
   width: 24px;
   vertical-align: middle;
 }
+
 body::after {
   content: '';
   background: url('/imagens/img.jpg') no-repeat center center;
-  background-color: cover;
+  background-size: cover;
   z-index: -1;
-  opacity: 0, 5;
+  opacity: 0.5;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
 }
+
 .chart-container {
   max-width: 200px;
-  /* Limitar a largura do gráfico */
   margin: 0 auto;
-  /* Centralizar */
 }
 
 #ageDistributionChart {
   width: 100px;
-  /* Largura do canvas */
   height: 100px;
-  /* Altura do canvas */
 }
 
 div.informacoes {
+div.informacoes,
+div.dados {
   display: flex;
 }
 
@@ -39,6 +39,16 @@ div section {
 
 div.dados {
   display: flex;
+@media screen and (max-width: 768px) {
+  div.informacoes,
+  div.dados {
+    flex-direction: column;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -49,3 +59,4 @@ body {
   width: 40%;
   height: 40%;
 }
+

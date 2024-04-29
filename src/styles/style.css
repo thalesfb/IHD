@@ -27,7 +27,6 @@ body::after {
   height: 100px;
 }
 
-div.informacoes {
 div.informacoes,
 div.dados {
   display: flex;
@@ -37,13 +36,11 @@ div section {
   max-width: 480px;
 }
 
-div.dados {
-  display: flex;
 @media screen and (max-width: 768px) {
-  div.informacoes,
-  div.dados {
-    flex-direction: column;
-  }
+}
+
+div.dados {
+  flex-direction: column;
 }
 
 img {
@@ -59,4 +56,3 @@ body {
   width: 40%;
   height: 40%;
 }
-

@@ -4,7 +4,7 @@
   vertical-align: middle;
 }
 body::after {
-  content: "";
+  content: '';
   background: url('/imagens/img.jpg') no-repeat center center;
   background-color: cover;
   z-index: -1;
@@ -29,14 +29,23 @@ body::after {
   /* Altura do canvas */
 }
 
-div.informacoes{
+div.informacoes {
   display: flex;
 }
 
-div section{
+div section {
   max-width: 480px;
 }
 
-div.dados{
+div.dados {
   display: flex;
+}
+
+body {
+  padding-top: 70px; /* Ajuste de acordo com a altura do seu navbar */
+}
+
+.image_introducao {
+  width: 40%;
+  height: 40%;
 }

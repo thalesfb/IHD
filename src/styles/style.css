@@ -28,3 +28,15 @@ body::after {
   height: 100px;
   /* Altura do canvas */
 }
+
+div.informacoes{
+  display: flex;
+}
+
+div section{
+  max-width: 480px;
+}
+
+div.dados{
+  display: flex;
+}

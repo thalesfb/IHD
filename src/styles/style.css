@@ -5,7 +5,7 @@
 }
 
 body::after {
-  content: '';
+  content: "";
   background: url('/imagens/img.jpg') no-repeat center center;
   background-size: cover;
   z-index: -1;
@@ -30,23 +30,21 @@ body::after {
 div.informacoes,
 div.dados {
   display: flex;
-}
-
-div section {
-  max-width: 480px;
+  margin-bottom: 100px;
 }
 
 @media screen and (max-width: 768px) {
-}
-
-div.dados {
-  flex-direction: column;
+  div.informacoes,
+  div.dados {
+    flex-direction: column;
+  }
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
+
 
 body {
   padding-top: 70px; /* Ajuste de acordo com a altura do seu navbar */

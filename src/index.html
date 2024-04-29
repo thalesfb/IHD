@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="styles/style.css">
-  <title>Envelhecimento da População</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Ícones do FontAwesome -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Envelhecimento da População</title>
+  </head>
 
-<body>
-  <div class="container">
-    <!-- Cabeçalho -->
-    <header class="row">
-      <h1 class="col text-center mt-5 mb-4">Envelhecimento da População</h1>
-    </header>
+  <body>
+    <div class="container">
+      <!-- Cabeçalho -->
+      <header class="row">
+        <h1 class="col text-center mt-5 mb-4">Envelhecimento da População</h1>
+      </header>
 
-    <!-- Seção de Informações -->
-    <section class="mb-5">
-      <h2 class="mb-3">Introdução</h2>
-      <p>A população mundial está envelhecendo. Isso apresenta tanto desafios quanto oportunidades para a sociedade
-        global. Este site busca fornecer informações claras e acessíveis sobre o assunto.</p>
-    </section>
+      <!-- Seção de Informações -->
+      <section class="mb-5">
+        <h2 class="mb-3">Introdução</h2>
+        <p>A população mundial está envelhecendo. Isso apresenta tanto desafios quanto oportunidades para a sociedade
+          global. Este site busca fornecer informações claras e acessíveis sobre o assunto.</p>
+      </section>
 
-    <!-- Seção de Dados -->
-    <section class="mb-5">
-      <h2 class="mb-3">Dados Estatísticos</h2>
-      <p>Gráficos e estatísticas sobre o envelhecimento populacional podem ser visualizados aqui, facilitando a
-        compreensão do fenômeno para todos os usuários.</p>
-    </section>
+      <!-- Seção de Dados -->
+      <section class="mb-5">
+        <h2 class="mb-3">Dados Estatísticos</h2>
+        <p>Gráficos e estatísticas sobre o envelhecimento populacional podem ser visualizados aqui, facilitando a
+          compreensão do fenômeno para todos os usuários.</p>
+        <a href="../dados/grafico.html" target="_blank" rel="external" rel="next">Gráfico sobre Estatísticos de Envelhecimento</a>
+      </section>
 
-    <!-- Seção de Contato -->
-    <section class="mb-5">
-      <h2 class="mb-3">Contato</h2>
-      <p>Para mais informações ou dúvidas, entre em contato conosco através dos canais abaixo.</p>
-      <ul>
+      <!-- Seção de Contato -->
+      <section class="mb-5">
+        <h2 class="mb-3">Contato</h2>
+        <p>Para mais informações ou dúvidas, entre em contato conosco através dos canais abaixo.</p>
         <ul>
           <li><img src="../icons/telephone.png" alt="Telefone" class="icon"> (11) 1234-5678</li>
           <li><img src="../icons/mail.png" alt="E-mail" class="icon"> contato@envelhecimento.org</li>
         </ul>
+      </section>
 
-      </ul>
-    </section>
+      <!-- Botão para Próxima Página -->
+      <section class="position-fixed bottom-0 end-0 m-4"> <!-- Botão fixo no canto inferior direito -->
+        <button class="btn btn-primary" onclick="window.location.href='../dados/grafico.html'"  >
+          Próxima <i class="fas fa-arrow-right"></i> <!-- Ícone de seta -->
+        </button>
+      </section>
 
-    <!-- Rodapé -->
-    <footer class="row">
-      <p class="col text-center text-muted">© 2024 Envelhecimento da População</p>
-    </footer>
-  </div>
-</body>
+      <!-- Rodapé -->
+      <footer class="row">
+        <p class="col text-center text-muted">© 2024 Envelhecimento da População</p>
+      </footer>
+    </div>
+  </body>
 
 </html>

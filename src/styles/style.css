@@ -3,3 +3,28 @@
   width: 24px;
   vertical-align: middle;
 }
+body::after {
+  content: "";
+  background: url('/imagens/img.jpg') no-repeat center center;
+  background-color: cover;
+  z-index: -1;
+  opacity: 0, 5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+.chart-container {
+  max-width: 200px;
+  /* Limitar a largura do gráfico */
+  margin: 0 auto;
+  /* Centralizar */
+}
+
+#ageDistributionChart {
+  width: 100px;
+  /* Largura do canvas */
+  height: 100px;
+  /* Altura do canvas */
+}

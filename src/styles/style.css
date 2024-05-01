@@ -1,30 +1,47 @@
-.icon {
-  height: 24px;
-  width: 24px;
-  vertical-align: middle;
+:root {
+  --primary-color: #007bff;
+  --spacing-small: 8px;
+  --font-size-icon: 1.2em;
+  --max-width-chart: 600px;
+}
+
+body {
+  padding-top: calc(
+    50px + 1em
+  ); /* Ajuste dinâmico baseado na altura do navbar */
+  position: relative; /* Necessário para o posicionamento correto do pseudo-elemento */
 }
 
 body::after {
-  content: "";
+  content: '';
   background: url('/imagens/img.jpg') no-repeat center center;
   background-size: cover;
-  z-index: -1;
   opacity: 0.5;
+  z-index: -1;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  display: inline-block;
+  object-fit: contain;
 }
 
 .chart-container {
-  max-width: 200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: var(--max-width-chart);
+  margin: 20px auto;
 }
 
-#ageDistributionChart {
-  width: 100px;
-  height: 100px;
+canvas {
+  width: 100% !important; /* Força o canvas a ocupar 100% da largura do contêiner */
+  height: auto !important; /* Altura automática para manter a proporção */
 }
 
 div.informacoes,
@@ -40,19 +57,17 @@ div.dados {
   }
 }
 
-img {
+img,
+.image_introducao {
   max-width: 100%;
   height: auto;
 }
 
-
-body {
-  padding-top: 70px; /* Ajuste de acordo com a altura do seu navbar */
-}
-
 .image_introducao {
-  width: 40%;
-  height: 40%;
+  width: 40%; /* Ajuste para imagem de introdução */
+  max-width: 600px; /* Máximo de largura */
+  display: block;
+  margin: 20px auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -60,4 +75,18 @@ body {
     display: block;
     margin: 0 auto;
   }
+
+  .image_introducao {
+    width: 100%; /* Largura total em telas menores */
+  }
+}
+
+.nav-link {
+  display: flex; /* Cria um layout flexível */
+  align-items: center; /* Centraliza os itens verticalmente */
+  gap: var(--spacing-small); /* Adiciona espaço entre o ícone e o texto */
+}
+
+.nav-link i {
+  font-size: var(--font-size-icon); /* Tamanho do ícone */
 }

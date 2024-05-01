@@ -6,15 +6,12 @@
 }
 
 body {
-  padding-top: calc(
-    50px + 1em
-  ); /* Ajuste dinâmico baseado na altura do navbar */
-  position: relative; /* Necessário para o posicionamento correto do pseudo-elemento */
+  padding-top: calc(25px + 1em); /* Ajuste dinâmico baseado na altura do navbar */
+  position: relative;
 }
 
 body::after {
   content: '';
-  background: url('/imagens/img.jpg') no-repeat center center;
   background-size: cover;
   opacity: 0.5;
   z-index: -1;
@@ -40,53 +37,60 @@ body::after {
 }
 
 canvas {
-  width: 100% !important; /* Força o canvas a ocupar 100% da largura do contêiner */
-  height: auto !important; /* Altura automática para manter a proporção */
+  width: 100% !important;
+  height: auto !important;
 }
 
-div.informacoes,
-div.dados {
+/* Flex container for the text and image */
+.informacoes {
   display: flex;
-  margin-bottom: 100px;
+  align-items: center; /* Centrally aligns items vertically */
+  justify-content: space-between; /* Distributes space between items */
+  margin-top: 20px;
+}
+
+/* Text section */
+.informacoes section {
+  flex: 1; /* Takes up remaining space */
+  margin-right: 20px; /* Adds space between the text and the image */
+}
+
+/* Image styling */
+.informacoes img {
+  flex-shrink: 0; /* Prevents the image from shrinking */
+  width: 50%; /* Sets the image width */
+  height: auto; /* Maintains aspect ratio */
 }
 
 @media screen and (max-width: 768px) {
-  div.informacoes,
-  div.dados {
+  .informacoes {
     flex-direction: column;
-  }
-}
-
-img,
-.image_introducao {
-  max-width: 100%;
-  height: auto;
-}
-
-.image_introducao {
-  width: 40%; /* Ajuste para imagem de introdução */
-  max-width: 600px; /* Máximo de largura */
-  display: block;
-  margin: 20px auto;
-}
-
-@media screen and (max-width: 768px) {
-  img {
-    display: block;
-    margin: 0 auto;
+    align-items: center;
   }
 
-  .image_introducao {
-    width: 100%; /* Largura total em telas menores */
+  .informacoes img {
+    width: 100%; /* Full width on small screens */
+    margin-top: 20px; /* Adds space above the image */
+  }
+
+  .informacoes section {
+    width: 100%; /* Full width for the text section */
+    margin-right: 0; /* Removes right margin */
   }
 }
 
 .nav-link {
-  display: flex; /* Cria um layout flexível */
-  align-items: center; /* Centraliza os itens verticalmente */
-  gap: var(--spacing-small); /* Adiciona espaço entre o ícone e o texto */
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
 }
 
 .nav-link i {
-  font-size: var(--font-size-icon); /* Tamanho do ícone */
+  font-size: var(--font-size-icon);
+}
+
+@media screen and (max-width: 768px) {
+  .row > .col-md-3 {
+    margin-bottom: 20px; /* Adiciona um espaço abaixo de cada coluna em telas menores */
+  }
 }

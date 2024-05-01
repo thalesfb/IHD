@@ -53,15 +53,18 @@
       <h2 class="mb-3">Distribuição por Idade</h2>
       <p>O gráfico abaixo mostra a distribuição percentual das diferentes faixas etárias da população idosa.</p>
 
-      <canvas id="ageDistributionChart"></canvas>
+      <div style="max-width: 500px; margin: 0 auto;">
+        <!-- Reduza as dimensões do canvas -->
+        <canvas id="ageDistributionChart" width="150" height="150"></canvas>
+      </div>
 
       <script>
         const ctx = document.getElementById('ageDistributionChart').getContext('2d');
         const data = {
-          labels: ['60-65 anos', '66-70 anos', '71-75 anos', '76-80 anos', '81-85 anos', '86+ anos'],
+          labels: ['60-64 anos', '65-69 anos', '70-74 anos', '75-79 anos', '80-84 anos', '85+ anos'],
           datasets: [{
-            label: 'Distribuição por Faixa Etária',
-            data: [25, 20, 15, 15, 10, 15], // Percentuais de exemplo
+            label: 'Distribuição por Faixa Etária no Brasil em 2023 (%)',
+            data: [4.9, 3.8, 2.8, 1.9, 1.1, 0.6], // Percentuais de exemplo
             backgroundColor: [
               '#FF6384',
               '#36A2EB',

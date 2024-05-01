@@ -15,7 +15,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Nome da Aplicação</a>
+      <a class="navbar-brand" href="../index.html">Melhor Idade</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,13 +23,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+            <a class="nav-link active" href="grafico.html"><i class="fa-solid fa-chart-line"></i> Dados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="grafico.html">Dados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../contact/contact.html">Sobre</a>
+            <a class="nav-link" href="../contact/contact.html"><i class="fa-regular fa-address-card"></i> Sobre</a>
           </li>
         </ul>
       </div>
@@ -41,61 +38,94 @@
       <h1 class="col text-center mt-5 mb-4">Dados Estatísticos</h1>
     </header>
 
-    <!-- Seção do Gráfico -->
+    <!-- Seção do Gráfico de Envelhecimento Global -->
     <section class="mb-5">
       <h2 class="mb-3">Envelhecimento Global</h2>
       <p>O gráfico abaixo mostra a projeção do aumento da população idosa ao longo dos anos.</p>
-
       <canvas id="agingChart" width="350" height="150"></canvas>
-
-      <script>
-        const ctx = document.getElementById('agingChart').getContext('2d');
-        const data = {
-          labels: ['2020', '2025', '2030', '2035', '2040', '2045', '2050'],
-          datasets: [{
-            label: 'AUmento da população Idosa no mundo: 2020-2050 (Bilhões)',
-            data: [1, 1.3, 1.5, 1.6, 1.75, 2.1, 2.2],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }]
-        };
-
-        const config = {
-          type: 'line',
-          data: data,
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        };
-
-        new Chart(ctx, config);
-      </script>
     </section>
 
-    <!-- Seção de Voltar -->
-    <section class="position-fixed bottom-0 start-0 m-4"> <!-- Botão fixo no canto inferior esquerdo -->
-      <button class="btn btn-primary" onclick="window.location.href='../index.html'">
-        <!-- URL para a página principal -->
-        <i class="fas fa-arrow-left"></i> Voltar </button>
+    <!-- Seção do Gráfico de Distribuição por Idade -->
+    <section class="mb-5">
+      <h2 class="mb-3">Distribuição por Idade</h2>
+      <p>O gráfico abaixo mostra a distribuição percentual das diferentes faixas etárias da população idosa.</p>
+      <div style="max-width: 500px; margin: 0 auto;">
+        <canvas id="ageDistributionChart" width="150" height="150"></canvas>
+      </div>
     </section>
-
-    <section class="position-fixed bottom-0 end-0 m-4"> <!-- Botão fixo no canto inferior direito -->
-      <button class="btn btn-primary" onclick="window.location.href='./faixa.html'">
-        <!-- Ajuste conforme necessário -->
-        Próxima <i class="fas fa-arrow-right"></i> <!-- Ícone de seta -->
-      </button>
-    </section>
-
-    <!-- Rodapé -->
-    <footer class="row">
-      <p class="col text-center text-muted">© 2024 Envelhecimento da População</p>
-    </footer>
   </div>
+
+  <!-- Scripts dos Gráficos -->
+  <script>
+    // Gráfico de Envelhecimento Global
+    const ctx1 = document.getElementById('agingChart').getContext('2d');
+    const agingData = {
+      labels: ['2020', '2025', '2030', '2035', '2040', '2045', '2050'],
+      datasets: [{
+        label: 'Aumento da população Idosa no mundo: 2020-2050 (Bilhões)',
+        data: [1, 1.3, 1.5, 1.6, 1.75, 2.1, 2.2],
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    };
+    const agingConfig = {
+      type: 'line',
+      data: agingData,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+    new Chart(ctx1, agingConfig);
+
+    // Gráfico de Distribuição por Idade
+    const ctx2 = document.getElementById('ageDistributionChart').getContext('2d');
+    const ageData = {
+      labels: ['60-64 anos', '65-69 anos', '70-74 anos', '75-79 anos', '80-84 anos', '85+ anos'],
+      datasets: [{
+        label: 'Distribuição por Faixa Etária no Brasil em 2023 (%)',
+        data: [4.9, 3.8, 2.8, 1.9, 1.1, 0.6],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'],
+        hoverOffset: 4
+      }]
+    };
+    const ageConfig = {
+      type: 'pie',
+      data: ageData,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    };
+    new Chart(ctx2, ageConfig);
+  </script>
+  <!-- Seção de Voltar -->
+  <section class="position-fixed bottom-0 start-0 m-4"> <!-- Botão fixo no canto inferior esquerdo -->
+    <button class="btn btn-primary" onclick="window.location.href='../index.html'">
+      <!-- URL para a página principal -->
+      <i class="fas fa-arrow-left"></i> Voltar </button>
+  </section>
+
+  <section class="position-fixed bottom-0 end-0 m-4"> <!-- Botão fixo no canto inferior direito -->
+    <button class="btn btn-primary" onclick="window.location.href='../contact/contact.html'">
+      <!-- Ajuste conforme necessário -->
+      Próxima <i class="fas fa-arrow-right"></i> <!-- Ícone de seta -->
+    </button>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="row">
+    <p class="col text-center text-muted">© 2024 Envelhecimento da População</p>
+  </footer>
+
 </body>
 
 </html>

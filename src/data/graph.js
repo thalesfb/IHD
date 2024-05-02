@@ -43,8 +43,8 @@ const agingConfig = {
         font: {
           weight: 'bold'
         },
-        formatter: (value, ctx) => {
-          return value.y;
+        formatter: function (value, ctx) {
+          return value + '%';
         }
       }
     }

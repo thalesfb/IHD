@@ -3,7 +3,7 @@ const agingData = {
   labels: ['2020', '2025', '2030', '2035', '2040', '2045', '2050'],
   datasets: [{
     label: 'Aumento da população Idosa no mundo: 2020-2050 (Bilhões)',
-    data: [1, 1.3, 1.5, 1.6, 1.75, 2.1, 2.2],
+    data: [11, 13, 14, 16, 17.5, 19, 21],
     backgroundColor: 'rgba(75, 192, 192, 0.2)',
     borderColor: 'rgba(75, 192, 192, 1)',
     borderWidth: 1
@@ -53,7 +53,7 @@ const agingConfig = {
 };
 new Chart(ctx1, agingConfig);
 
-// Gráfico de Distribuição por Idade (Alterado para gráfico de colunas)
+// Gráfico de Distribuição por Idade
 const ctx2 = document.getElementById('ageDistributionChart').getContext('2d');
 const ageData = {
   labels: ['60-64 anos', '65-69 anos', '70-74 anos', '75-79 anos', '80-84 anos', '85+ anos'],

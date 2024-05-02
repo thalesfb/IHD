@@ -54,7 +54,7 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 ## Contato
 
-Thales Ferreira - [seuemail@example.com](mailto:seuemail@example.com)
+Thales Ferreira - [thales_fb2014@hotmail.com](mailto:thales_fb2014@hotmail.com)
 
 ## Agradecimentos
 
